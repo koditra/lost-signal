@@ -1,0 +1,254 @@
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    color: #4aff75;
+    font-family: Hack, monospace;
+
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    width: 100%;
+    padding: 18px 30px;
+
+    border-bottom: 2px solid #4aff75;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #4aff75;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-title {
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 25px;
+}
+
+.content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+
+/* TITLE */
+
+.title {
+    position: relative;
+    display: inline-block;
+
+    font-size: clamp(70px, 13vw, 140px);
+    line-height: 1;
+
+    color: #4aff75;
+    font-weight: bold;
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+}
+
+.title::before,
+.title::after {
+    content: attr(data-text);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.title::before {
+    color: #ff00c1;
+
+    transform: translate(-3px, 0);
+
+    clip-path: inset(0 0 55% 0);
+
+    animation: glitch-one 2.5s infinite;
+}
+
+.title::after {
+    color: #00fff9;
+
+    transform: translate(3px, 0);
+
+    clip-path: inset(55% 0 0 0);
+
+    animation: glitch-two 2.5s infinite;
+}
+
+@keyframes glitch-one {
+    0%,
+    85%,
+    100% {
+        transform: translate(-3px, 0);
+    }
+
+    87% {
+        transform: translate(-12px, 2px);
+    }
+
+    89% {
+        transform: translate(8px, -2px);
+    }
+
+    91% {
+        transform: translate(-5px, 1px);
+    }
+
+    93% {
+        transform: translate(-3px, 0);
+    }
+}
+
+@keyframes glitch-two {
+    0%,
+    82%,
+    100% {
+        transform: translate(3px, 0);
+    }
+
+    84% {
+        transform: translate(10px, -2px);
+    }
+
+    86% {
+        transform: translate(-8px, 2px);
+    }
+
+    89% {
+        transform: translate(5px, -1px);
+    }
+
+    92% {
+        transform: translate(3px, 0);
+    }
+}
+
+
+/* TEXT */
+
+.intro {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+
+/* PROJECT IDEAS */
+
+.ideas {
+    max-width: 650px;
+
+    margin: 35px auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.idea {
+    border: 1px solid #4aff75;
+
+    padding: 8px 12px;
+}
+
+
+/* RSVP */
+
+.rsvp {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 13px 25px;
+
+    background: #4aff75;
+    color: #000;
+
+    border: 2px solid #4aff75;
+
+    font-family: Hack, monospace;
+    font-size: 17px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.rsvp:hover {
+    background: #000;
+    color: #4aff75;
+
+    transform: translateY(-3px);
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 15px;
+
+    text-align: center;
+
+    border-top: 2px solid #4aff75;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    main {
+        padding: 40px 20px;
+    }
+
+    .title {
+        letter-spacing: -3px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+}
+```
