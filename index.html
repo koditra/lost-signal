@@ -3,47 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080a09">
+    <meta name="description" content="Lost Signal is a Hack Club YSWS about building ways to communicate without the internet or cellular networks.">
 
-    <title>Lost Signal</title>
+    <title>Lost Signal | Hack Club</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <a class="nav-title" href="#" aria-label="Lost Signal home">
+            LOST SIGNAL<span>.</span>
+        </a>
 
-    <nav>
-        <div class="nav-title">LOST SIGNAL</div>
-
-        <a href="https://rsvp.hackclub.community/lost-signal">
-            RSVP
+        <a class="nav-rsvp" href="https://rsvp.hackclub.community/lost-signal">
+            RSVP <span aria-hidden="true">↗</span>
         </a>
     </nav>
 
     <main>
-
         <section class="hero">
-            <div class="hero-content">
+            <div class="hero-grid" aria-hidden="true"></div>
 
+            <div class="hero-content">
                 <div class="eyebrow">
+                    <span class="status-dot"></span>
                     A HACK CLUB YSWS
                 </div>
 
-                <h1 class="title" data-text="LOST SIGNAL">
-                    LOST SIGNAL
+                <h1 class="title">
+                    LOST<span class="title-accent">SIGNAL</span>
                 </h1>
 
                 <p class="hero-text">
                     What happens when the internet isn't there?
                 </p>
 
+                <a class="hero-link" href="#about">
+                    Find out <span aria-hidden="true">↓</span>
+                </a>
+            </div>
+
+            <div class="hero-bottom" aria-hidden="true">
+                <span>CONNECTION LOST</span>
+                <span>SEARCHING FOR SIGNAL...</span>
             </div>
         </section>
 
-
-        <section class="content">
+        <section class="content" id="about">
+            <div class="section-label">
+                <span>01</span> / THE IDEA
+            </div>
 
             <h2>
-                Stay connected.
+                Stay connected.<br>
                 <span>Even offline.</span>
             </h2>
 
@@ -57,71 +74,69 @@
                 usual ways of communicating aren't available.
             </p>
 
-
-            <div class="ideas">
-
-                <div class="idea red">
-                    <h3>LoRa messengers</h3>
-                    <p>Send messages without cell service.</p>
-                </div>
-
-                <div class="idea orange">
-                    <h3>Mesh networks</h3>
-                    <p>Let devices connect through each other.</p>
-                </div>
-
-                <div class="idea blue">
-                    <h3>Radio tools</h3>
-                    <p>Experiment with communication over radio.</p>
-                </div>
-
-                <div class="idea green">
-                    <h3>Offline chat</h3>
-                    <p>Make chatting work without the internet.</p>
-                </div>
-
-                <div class="idea purple">
-                    <h3>Bluetooth</h3>
-                    <p>Find new ways to connect nearby devices.</p>
-                </div>
-
-                <div class="idea yellow">
-                    <h3>Your idea</h3>
-                    <p>Build something we haven't thought of yet.</p>
-                </div>
-
+            <div class="ideas-heading">
+                <h3>What could you build?</h3>
+                <p>Some places to start. Or come up with your own idea.</p>
             </div>
 
+            <div class="ideas">
+                <article class="idea red">
+                    <span class="idea-number">01</span>
+                    <h3>LoRa messengers</h3>
+                    <p>Send messages without cell service.</p>
+                </article>
 
-            <section class="join">
+                <article class="idea orange">
+                    <span class="idea-number">02</span>
+                    <h3>Mesh networks</h3>
+                    <p>Let devices pass messages through each other.</p>
+                </article>
 
-                <div>
-                    <h2>Interested?</h2>
+                <article class="idea blue">
+                    <span class="idea-number">03</span>
+                    <h3>Radio tools</h3>
+                    <p>Experiment with communication over radio.</p>
+                </article>
 
+                <article class="idea green">
+                    <span class="idea-number">04</span>
+                    <h3>Offline chat</h3>
+                    <p>Build a chat app that works without the internet.</p>
+                </article>
+
+                <article class="idea purple">
+                    <span class="idea-number">05</span>
+                    <h3>Bluetooth</h3>
+                    <p>Find ways for nearby devices to communicate.</p>
+                </article>
+
+                <article class="idea yellow">
+                    <span class="idea-number">06</span>
+                    <h3>Your idea</h3>
+                    <p>Try something nobody has thought of yet.</p>
+                </article>
+            </div>
+
+            <section class="join" id="join">
+                <div class="join-content">
+                    <span class="join-label">GOT AN IDEA?</span>
+                    <h2>Let's build it.</h2>
                     <p>
-                        Please RSVP if you'd be interested in building
-                        something for Lost Signal.
+                        Interested in making something for Lost Signal?
+                        RSVP and let us know you're interested.
                     </p>
                 </div>
 
-                <a
-                    class="rsvp"
-                    href="https://rsvp.hackclub.community/lost-signal"
-                    target="_blank"
-                >
-                    RSVP →
+                <a class="rsvp" href="https://rsvp.hackclub.community/lost-signal">
+                    I'm interested <span aria-hidden="true">→</span>
                 </a>
-
             </section>
-
         </section>
-
     </main>
 
-
     <footer>
-        Lost Signal
+        <a href="#" class="footer-title">LOST SIGNAL<span>.</span></a>
+        <p>Built for when the signal disappears.</p>
     </footer>
-
 </body>
 </html>
