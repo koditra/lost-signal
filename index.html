@@ -9,6 +9,8 @@
     <title>Lost Signal</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script type="module" src="rsvp-dashboard.mjs"></script>
 </head>
 
 <body>
@@ -52,6 +54,47 @@
                 Build something that keeps people connected when the
                 usual ways of communicating aren't available.
             </p>
+
+            <section class="rsvp-capacity" aria-labelledby="rsvp-capacity-heading">
+                <div class="rsvp-capacity-header">
+                    <div>
+                        <p class="rsvp-capacity-event">Lost Signal</p>
+                        <h2 id="rsvp-capacity-heading">RSVP Capacity</h2>
+                    </div>
+                    <span class="rsvp-live-indicator">
+                        <span aria-hidden="true"></span>
+                        Live updates
+                    </span>
+                </div>
+
+                <div id="rsvp-dashboard" class="rsvp-dashboard" data-state="loading">
+                    <p id="rsvp-message" class="rsvp-message" role="status" aria-live="polite">
+                        Loading RSVP statistics…
+                    </p>
+                    <div id="rsvp-details" class="rsvp-details" hidden>
+                        <div class="rsvp-summary">
+                            <p id="rsvp-count" class="rsvp-count"></p>
+                            <p id="rsvp-percentage" class="rsvp-percentage"></p>
+                        </div>
+                        <div
+                            id="rsvp-progress"
+                            class="rsvp-progress"
+                            role="progressbar"
+                            aria-valuemin="0"
+                            aria-label="Lost Signal RSVP progress"
+                        >
+                            <div id="rsvp-progress-fill" class="rsvp-progress-fill"></div>
+                        </div>
+                        <div class="rsvp-footer">
+                            <p id="rsvp-capacity-status" class="rsvp-capacity-status"></p>
+                            <p id="rsvp-updated" class="rsvp-updated"></p>
+                        </div>
+                        <p id="rsvp-stale" class="rsvp-stale" hidden>
+                            Showing the last successful update; the latest refresh failed.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             <div class="ideas">
                 <div class="idea red">
