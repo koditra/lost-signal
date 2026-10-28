@@ -64,7 +64,26 @@ An origin consists of scheme, hostname, and optional port, without a path. Confi
 
 ### Deploy
 
-Deploy the `backend/` NestJS project to the VM at `ash@hackclub.app`, with outbound HTTPS access and the app listening on `0.0.0.0:8123` (the VM's custom-domain mapping target). Configure `PORT=8123`, `CORS_ORIGINS=https://koditra.github.io,http://localhost:5500,http://127.0.0.1:5500`, and, optionally, `RSVP_CAPACITY=120` in the VM's app settings. Verify `https://app.dermvision.tech/api/lost-signal/stats` responds with JSON before relying on the dashboard. Deploy the static site to GitHub Pages after setting the production API origin in `config.js`. The backend must be deployed separately; GitHub Pages cannot run NestJS.
+Deploy the `backend/` NestJS project to the VM at `ash@hackclub.app`, with outbound HTTPS access and the app listening on `0.0.0.0:8123` (the VM's custom-domain mapping target). Configure `PORT=8123`, `CORS_ORIGINS=https://koditra.github.io,http://localhost:5500,http://127.0.0.1:5500`, and, optionally, `RSVP_CAPACITY=120` in the VM's app settings.
+
+After SSHing into the VM, run this one-command deployment:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/koditra/lost-signal/main/backend/deploy-vm.sh | bash
+```
+
+The script clones or updates `/home/$USER/lost-signal-rsvp-api` by default, installs the backend dependencies, builds it, runs its tests, starts it with PM2 on port `8123`, saves the PM2 process list, and verifies the API locally. Override defaults only before the command if needed, for example:
+
+```sh
+export APP_DIR="$HOME/lost-signal-api"
+export RSVP_CAPACITY="120"
+export CORS_ORIGINS="https://koditra.github.io,http://localhost:5500"
+curl -fsSL https://raw.githubusercontent.com/koditra/lost-signal/main/backend/deploy-vm.sh | bash
+```
+
+Verify `https://app.dermvision.tech/api/lost-signal/stats` responds with JSON before relying on the dashboard. If PM2 does not start automatically after a VM reboot, run `pm2 startup` and the single `sudo` command it prints, then run `pm2 save` once more.
+
+Deploy the static site to GitHub Pages after setting the production API origin in `config.js`. The backend must be deployed separately; GitHub Pages cannot run NestJS.
 
 ### Troubleshooting
 
