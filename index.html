@@ -3,155 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Lost Signal is a Hack Club YSWS about building ways to communicate without the internet or cellular networks.">
+    <meta name="theme-color" content="#003b4b">
+    <meta name="description" content="Lost Signal is a Hack Club draft YSWS about building ways to communicate without the internet or cellular networks.">
 
     <title>Lost Signal</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="config.js"></script>
-    <script type="module" src="rsvp-dashboard.mjs"></script>
+    <script src="static-background.js" defer></script>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-title">LOST SIGNAL</div>
-
-        <a href="https://rsvp.hackclub.community/lost-signal">
-            RSVP
-        </a>
-    </nav>
-
+    <canvas id="static-background" aria-hidden="true"></canvas>
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="eyebrow">
-                    A HACK CLUB YSWS
-                </div>
+                <a class="hackclub-link" href="https://hackclub.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Hack Club">
+                    <img class="hackclub-flag" src="assets/hackclub-flag.svg" alt="Hack Club Orpheus flag">
+                </a>
+                <img
+                    class="hero-logo"
+                    src="assets/logo.png"
+                    alt="Lost Signal"
+                    fetchpriority="high"
+                >
 
-                <h1 class="title" data-text="LOST SIGNAL">
-                    LOST SIGNAL
-                </h1>
+                <a class="rsvp hero-rsvp" href="https://rsvp.hackclub.community/lost-signal" target="_blank" rel="noopener noreferrer">RSVP</a>
 
-                <p class="hero-text">
-                    What happens when the internet isn't there?
-                </p>
+                <div class="eyebrow">DRAFT YSWS</div>
             </div>
         </section>
 
         <section class="content">
-            <h2>
-                Stay connected.
-                <span>Even offline.</span>
-            </h2>
-
             <p class="description">
-                Lost Signal is a YSWS about building ways to communicate
-                without the internet or cellular networks.
+                Lost Signal is a Hack Club draft YSWS for people who want to build communication tools for the moments when the internet or cellular networks disappear. Teams will design, prototype, test, and share a working project that helps nearby people stay connected offline.
             </p>
 
             <p class="description">
-                Build something that keeps people connected when the
-                usual ways of communicating aren't available.
+                Your project can be hardware, software, or both. We want practical experiments such as local message networks, rescue radios, offline coordination tools, peer-to-peer apps, and low-power devices that remain useful in emergencies, remote places, or network outages.
             </p>
-
-            <section class="rsvp-capacity" aria-labelledby="rsvp-capacity-heading">
-                <div class="rsvp-capacity-header">
-                    <div>
-                        <p class="rsvp-capacity-event">Lost Signal</p>
-                        <h2 id="rsvp-capacity-heading">RSVP Capacity</h2>
-                    </div>
-                    <span class="rsvp-live-indicator">
-                        <span aria-hidden="true"></span>
-                        Live updates
-                    </span>
-                </div>
-
-                <div id="rsvp-dashboard" class="rsvp-dashboard" data-state="loading">
-                    <p id="rsvp-message" class="rsvp-message" role="status" aria-live="polite">
-                        Loading RSVP statistics…
-                    </p>
-                    <div id="rsvp-details" class="rsvp-details" hidden>
-                        <div class="rsvp-summary">
-                            <p id="rsvp-count" class="rsvp-count"></p>
-                            <p id="rsvp-percentage" class="rsvp-percentage"></p>
-                        </div>
-                        <div
-                            id="rsvp-progress"
-                            class="rsvp-progress"
-                            role="progressbar"
-                            aria-valuemin="0"
-                            aria-label="Lost Signal RSVP progress"
-                        >
-                            <div id="rsvp-progress-fill" class="rsvp-progress-fill"></div>
-                        </div>
-                        <div class="rsvp-footer">
-                            <p id="rsvp-capacity-status" class="rsvp-capacity-status"></p>
-                            <p id="rsvp-updated" class="rsvp-updated"></p>
-                        </div>
-                        <p id="rsvp-stale" class="rsvp-stale" hidden>
-                            Showing the last successful update; the latest refresh failed.
-                        </p>
-                    </div>
-                </div>
-            </section>
 
             <div class="ideas">
-                <div class="idea red">
+                <div class="idea">
                     <h3>LoRa messengers</h3>
-                    <p>Send messages without cell service.</p>
+                    <p>Build a small LoRa node that sends text or sensor data across long distances without Wi-Fi or cellular service.</p>
                 </div>
 
-                <div class="idea orange">
+                <div class="idea">
                     <h3>Mesh networks</h3>
-                    <p>Let devices connect through each other.</p>
+                    <p>Create a network where phones or computers relay messages to nearby devices until every part of a group can be reached.</p>
                 </div>
 
-                <div class="idea blue">
+                <div class="idea">
                     <h3>Radio tools</h3>
-                    <p>Experiment with communication over radio.</p>
+                    <p>Experiment with radio hardware, Morse, APRS, emergency alerts, or simple custom protocols for communication without infrastructure.</p>
                 </div>
 
-                <div class="idea green">
+                <div class="idea">
                     <h3>Offline chat</h3>
-                    <p>Make chatting work without the internet.</p>
+                    <p>Make a local chat app or message board that connects devices directly over Wi-Fi, Bluetooth, local servers, or peer discovery.</p>
                 </div>
 
-                <div class="idea purple">
+                <div class="idea">
                     <h3>Bluetooth</h3>
-                    <p>Find new ways to connect nearby devices.</p>
+                    <p>Prototype a nearby-device tool that shares location, status, files, or messages when a normal connection is unavailable.</p>
                 </div>
 
-                <div class="idea yellow">
+                <div class="idea">
                     <h3>Your idea</h3>
-                    <p>Build something we haven't thought of yet.</p>
+                    <p>Invent your own way to keep information moving. Projects can focus on rural access, disaster response, privacy, accessibility, or anything else you discover needs offline communication.</p>
                 </div>
             </div>
-
-            <section class="join">
-                <div>
-                    <h2>Interested?</h2>
-
-                    <p>
-                        Please RSVP if you'd be interested in building
-                        something for Lost Signal.
-                    </p>
-                </div>
-
-                <a
-                    class="rsvp"
-                    href="https://rsvp.hackclub.community/lost-signal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    RSVP →
-                </a>
+            //faq
+            <section class="faq">
+                <h2>FAQ</h2>
+                <details>
+                    <summary>What is a YSWS?</summary>
+                    <p>YSWS means You Ship, We Ship: build a project, ship it, and earn rewards after it is reviewed by Hack Club.</p>
+                </details>
+                <details>
+                    <summary>What are we building for Lost Signal?</summary>
+                    <p>Lost Signal is a draft YSWS about communication tools that work without the internet or cellular networks.</p>
+                </details>
+                <details>
+                    <summary>Can I work with a team or by myself?</summary>
+                    <p>Both are welcome. Teams should coordinate so everyone has a clear part in designing, building, documenting, or testing the project.</p>
+                </details>
+                <details>
+                    <summary>Do I need experience with radios or hardware?</summary>
+                    <p>No. Software projects, small prototypes, simulations, and beginner-friendly experiments are all valid starting points.</p>
+                </details>
             </section>
+
         </section>
     </main>
-
-    <footer>
-        Lost Signal
-    </footer>
+    // this is the footer
+    <footer><span class="footer-english">made by ash w/ :3</span><span class="footer-devanagari">पीयूष</span></footer>
 </body>
 </html>
